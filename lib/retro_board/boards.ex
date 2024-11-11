@@ -18,7 +18,7 @@ defmodule RetroBoard.Boards do
 
   """
   def list_boards do
-    Repo.all(Board)
+    Board |> order_by(desc: :id) |> Repo.all()
   end
 
   @doc """

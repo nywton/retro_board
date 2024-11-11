@@ -11,7 +11,7 @@ defmodule RetroBoardWeb.BoardLive do
     {:ok,
      socket
      |> assign(:boards, Boards.list_boards())
-     |> assign(:pahe_title, "Boards")
+     |> assign(:page_title, "Boards")
      |> assign(:board, new_board)
      |> assign(:changeset, chnageset)
      |> assign(:valid, false)}
