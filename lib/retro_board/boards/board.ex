@@ -6,9 +6,9 @@ defmodule RetroBoard.Boards.Board do
   schema "boards" do
     field :title, :string
 
-    has_many :start_card, Card, where: [type: "start"]
-    has_many :stop_card, Card, where: [type: "stop"]
-    has_many :continue, Card, where: [type: "continue"]
+    has_many :start_cards, Card, where: [type: "start"]
+    has_many :stop_cards, Card, where: [type: "stop"]
+    has_many :continue_cards, Card, where: [type: "continue"]
 
     timestamps(type: :utc_datetime)
   end

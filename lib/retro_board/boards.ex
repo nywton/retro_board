@@ -35,7 +35,10 @@ defmodule RetroBoard.Boards do
       ** (Ecto.NoResultsError)
 
   """
-  def get_board!(id), do: Repo.get!(Board, id)
+  def get_board!(id) do
+    Repo.get!(Board, id)
+    |> Repo.preload([:start_cards, :stop_cards, :continue_cards])
+  end
 
   @doc """
   Creates a board.
