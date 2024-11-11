@@ -4,3 +4,36 @@
     <li :for={board <- @boards}><%= board.title %></li>
   </ul>
 </div>
+
+<.form
+  for={@changeset}
+  id="board-form"
+  phx-change="validate"
+  phx-submit="save"
+  class="mt-5 sm:flex sm:items-center"
+>
+  <div class="w-full sm:max-w-xs"> 
+    <label for="title" class="sr-only">Add Board</label> 
+    <input
+      type="text"
+      name="board[title]"
+      id="board-form_title"
+      placeholder="Add Board"
+      value={@changeset.data.title}
+      placeholder="Board Name"
+      class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+  </div>
+  <button
+    type="submit"
+    phx-disable-with="Saving..."
+    disabled={@valid !== true}
+    class={[
+      button_valid(@valid),
+      "mt-3 inline-flex items-center rounded-md border border-transparent",
+      "px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700",
+      "focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+    ]}>
+    Save
+  </button>
+</.form>
+
