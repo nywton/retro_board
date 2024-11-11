@@ -1,0 +1,6 @@
+<div class="my-4">
+  <h2 class="text-xl font-semibold">Active Boards</h2>
+  <ul>
+    <li :for={board <- @boards}><%= board.title %></li>
+  </ul>
+</div>
