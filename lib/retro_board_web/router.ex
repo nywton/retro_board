@@ -18,10 +18,9 @@ defmodule RetroBoardWeb.Router do
     pipe_through :browser
 
     live "/myboards", BoardLive
+    live "/boards/:id", BoardShowLive
 
-    # live "/boards", BoardLive.Index, :index
-    # live "/boards/new", BoardLive.Index, :new
-    # live "/boards/:id/edit", BoardLive.Index, :edit
+    # live "/boards", BoardLive.Index, :index live "/boards/new", BoardLive.Index, :new live "/boards/:id/edit", BoardLive.Index, :edit
     #
     # live "/boards/:id", BoardLive.Show, :show
     # live "/boards/:id/show/edit", BoardLive.Show, :edit
